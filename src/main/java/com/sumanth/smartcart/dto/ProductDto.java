@@ -1,6 +1,5 @@
 package com.sumanth.smartcart.dto;
 
-import jakarta.persistence.Column;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -15,7 +14,7 @@ public class ProductDto {
     private String description;
     private BigDecimal price;
     private Integer popularity;
-    private String imageURL;
+    private String imageUrl;
     private Instant createdAt;
 
 }

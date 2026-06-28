@@ -32,7 +32,7 @@ public class Product {
     private Integer popularity;
 
     @Column(name = "IMAGE_URL",length = 500)
-    private String imageURL;
+    private String imageUrl;
 
 
     @ColumnDefault("CURRENT_TIMESTAMP")
