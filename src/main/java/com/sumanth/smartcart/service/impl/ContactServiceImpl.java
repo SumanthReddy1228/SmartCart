@@ -9,6 +9,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
 import java.time.Instant;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -35,6 +36,10 @@ public class ContactServiceImpl implements IContactService {
         Contact contact = new Contact();
         BeanUtils.copyProperties(contactRequestDto,contact);
         return contact;
+    }
+
+    public List<Contact> getContacts(){
+        return contactRepository.findAll();
     }
 
 }
