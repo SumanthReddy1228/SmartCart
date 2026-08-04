@@ -18,12 +18,8 @@ public class ContactController {
 
     @PostMapping("/contacts")
     public ResponseEntity<String> saveContact(@RequestBody ContactRequestDto contactRequestDto){
-        boolean isSaved =iContactService.saveContact(contactRequestDto);
-
-        if(isSaved){
-            return ResponseEntity.status(HttpStatus.CREATED).body("Contact Saved");
-        }
-        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Contact Not Saved");
+        iContactService.saveContact(contactRequestDto);
+        return ResponseEntity.status(HttpStatus.CREATED).body("Contact Saved");
     }
 
     @GetMapping("/contacts")

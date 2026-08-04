@@ -20,16 +20,11 @@ public class ContactServiceImpl implements IContactService {
     @Override
     public boolean saveContact(ContactRequestDto contactRequestDto){
 
-        try{
             Contact contact =transformToEntity(contactRequestDto);
             contact.setCreatedAt(Instant.now());
             contact.setCreatedBy(contactRequestDto.getName());
             contactRepository.save(contact);
             return true;
-        }catch (Exception e){
-            System.out.println(e.getMessage());
-            return false;
-        }
     }
 
     public Contact transformToEntity(ContactRequestDto contactRequestDto){
