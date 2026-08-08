@@ -8,7 +8,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
-import java.time.Instant;
 import java.util.List;
 
 @Service
@@ -21,8 +20,6 @@ public class ContactServiceImpl implements IContactService {
     public boolean saveContact(ContactRequestDto contactRequestDto){
 
             Contact contact =transformToEntity(contactRequestDto);
-            contact.setCreatedAt(Instant.now());
-            contact.setCreatedBy(contactRequestDto.getName());
             contactRepository.save(contact);
             return true;
     }
